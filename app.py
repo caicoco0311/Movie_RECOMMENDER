@@ -16,22 +16,20 @@ with st.sidebar:
     st.divider()
     
     # 角色切换器 (System Prompt)
-    role_type = st.selectbox("当前助手角色", ["通用助手", "电影导演/编剧", "Prompt 优化专家", "技术专家"])
+    role_type = st.selectbox("Role", ["Assistant", "Movie Recommender"])
     
     roles = {
-        "通用助手": "你是一个全能助手。",
-        "电影导演/编剧": "你是一位资深电影导演，擅长镜头语言分析、剧本结构及视觉叙事。",
-        "Prompt 优化专家": "你是一个 Midjourney 和 AIGC 提示词专家，擅长将模糊的想法转化为精准的参数化指令。",
-        "技术专家": "你是一个精通 Python 和 Streamlit 的前端与 AI 开发者。"
+        "Assistant": "你是一个全能助手。",
+        "Movie Recommender": "你是一位资深电影导演，擅长镜头语言分析、剧本结构及视觉叙事。"
     }
     
     st.divider()
     
     # 参数微调
-    model_choice = st.selectbox("模型选择", ["gpt-4o", "gpt-4-turbo", "gpt-3.5-turbo"])
-    temp = st.slider("Temperature (创造力)", 0.0, 1.5, 0.7, 0.1)
+    model_choice = st.selectbox("Model", ["gpt-4o", "gpt-4-turbo", "gpt-3.5-turbo"])
+    temp = st.slider("Temperature (Creativity)", 0.0, 1.5, 0.7, 0.1)
     
-    if st.button("🗑️ 清空当前对话"):
+    if st.button("🗑️ Clear"):
         st.session_state.messages = []
         st.rerun()
 
@@ -45,9 +43,10 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # 输入处理
-if prompt := st.chat_input("输入你的指令..."):
+if prompt := st.chat_input("Input..."):
     if not api_key:
-        st.warning("请输入 API Key 以继续")
+        st.warning("Please Enter Your API Key
+        ")
         st.stop()
 
     client = OpenAI(api_key=api_key)
