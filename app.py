@@ -7,7 +7,7 @@ st.set_page_config(page_title="Cai's AI Lab", page_icon="🧪", layout="wide")
 
 # --- 侧边栏：高级配置 ---
 with st.sidebar:
-    st.title("🤖 控制中心")
+    st.title("🤖 Control Bar")
     
     # 尝试从环境变量获取 Key，或者手动输入
     default_key = os.getenv("OPENAI_API_KEY", "")
@@ -45,8 +45,7 @@ for message in st.session_state.messages:
 # 输入处理
 if prompt := st.chat_input("Input..."):
     if not api_key:
-        st.warning("Please Enter Your API Key
-        ")
+        st.warning("Please Enter Your API Key")
         st.stop()
 
     client = OpenAI(api_key=api_key)
