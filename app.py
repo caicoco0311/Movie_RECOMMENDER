@@ -12,7 +12,7 @@ client = OpenAI(
 # 1. PAGE CONFIG  (must be first Streamlit call)
 # ─────────────────────────────────────────────
 st.set_page_config(
-    page_title="🎬 Movie Recommender",
+    page_title="🎬 필름마니아 4.0",
     page_icon="🎬",
     layout="wide",
     initial_sidebar_state="expanded",
