@@ -14,7 +14,7 @@
 ## 🛠️ 技术栈
 
 - **Frontend**: [Streamlit](https://streamlit.io/)
-- **LLM Engine**: [OpenAI API](https://platform.openai.com/) (GPT-4o / GPT-4 Turbo)
+- **LLM Engine**: [OpenAI API](https://platform.openai.com/) (GPT-4 / GPT-4 Turbo)
 - **Language**: Python 3.9+
 
 ## 🚀 快速启动
