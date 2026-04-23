@@ -406,6 +406,7 @@ def stream_response(client: OpenAI, messages: list[dict]) -> str:
     stream = client.chat.completions.create(
         model=model_choice,
         messages=messages,
+		top_p=0.5,
         temperature=temperature,
         max_tokens=max_tokens,
         stream=True,
